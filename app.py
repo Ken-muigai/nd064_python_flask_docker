@@ -30,6 +30,25 @@ def metrics():
     return response
 
 
+@app.route("/beautiful")
+def lucky():
+    response1 = app.response_class(
+        response=json.dumps(
+            {
+                "name": "HeadGame",
+                "dopamine": "extreme",
+                "provisioned": "anytime",
+                "location": "anywhere"
+            }
+        )
+        ,
+        status=200,
+        mimetype="application/json"
+    )
+    app.logger.info("Eureka!!")
+    return response1
+
+
 @app.route("/")
 def hello():
     app.logger.info('Main request successfull')
